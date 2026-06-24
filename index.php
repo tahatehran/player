@@ -21,12 +21,14 @@ $pageTitle = $isValidUrl ? 'پخش ویدیو' : 'پخش‌کننده ویدیو
     <meta name="theme-color" content="#0f172a">
     <meta name="description" content="پخش آنلاین ویدیو با کیفیت بالا - Ththt.ir">
     <title><?php echo $pageTitle; ?> | Ththt.ir</title>
-    <!-- Bootstrap RTL -->
-    <link rel="stylesheet" href="https://cdn2.ththt.ir/bootstrap-5.3.8-dist/css/bootstrap.rtl.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdn2.ththt.ir/fontawesome-free-6.7.2-web/css/all.min.css">
-    <!-- فونت وزیر -->
-    <link rel="stylesheet" href="https://cdn2.ththt.ir/font-vazir.css">
+    <!-- Bootstrap RTL (Local) -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome (Local) -->
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+    <!-- فونت وزیرمتن (Local) -->
+    <link rel="stylesheet" href="assets/vendor/fonts/vazirmatn.css">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.webmanifest">
     <!-- استایل سفارشی -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -426,8 +428,8 @@ $pageTitle = $isValidUrl ? 'پخش ویدیو' : 'پخش‌کننده ویدیو
             </div>
         </div>
     </footer>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn2.ththt.ir/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS (Local) -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Player JS -->
     <script src="player.js"></script>
     <?php if ($isValidUrl): ?>
@@ -448,5 +450,12 @@ $pageTitle = $isValidUrl ? 'پخش ویدیو' : 'پخش‌کننده ویدیو
     });
     </script>
     <?php endif; ?>
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('sw.js').catch(function() {});
+        });
+    }
+    </script>
 </body>
 </html>

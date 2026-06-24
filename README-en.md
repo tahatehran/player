@@ -19,6 +19,8 @@ This repository contains the frontend implementation of an online video player b
 - Progress bar with drag/touch support
 - Playback status and center toast messages
 - Responsive layout for mobile and desktop
+- CDN dependencies removed by serving Bootstrap / Font Awesome / Vazirmatn locally
+- Offline capability via Service Worker and Web App Manifest
 
 ## Accepted input URL
 
@@ -46,3 +48,8 @@ Example:
 ## Run locally
 
 This project has no build step. Serve the repository through any PHP-capable web server and open `index.php`.
+
+## Offline mode
+
+- After the first successful load, core static assets are cached in the browser.
+- In offline mode, the main player UI can be loaded from cache.
