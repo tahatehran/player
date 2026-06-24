@@ -1,32 +1,48 @@
-# MOVTIGROUP Website Template
+# Online Video Player (Ththt.ir)
 
-This repository contains the main website template for **MOVTIGROUP**. Its purpose is to showcase and document the visual design and layout of the website, representing the company’s visual identity. Note that the operational code and backend logic are stored privately in a separate repository.
+This repository contains the frontend implementation of an online video player built with PHP, JavaScript, and CSS. It is designed to play direct video links from specific **Ththt.ir** domains.
 
-**GitHub Repository:** [https://github.com/movtigroup/movtigroup/](https://github.com/movtigroup/movtigroup/)
+## Main files
 
-## Introduction
+- `/home/runner/work/player/player/index.php` main page layout, URL validation, and UI structure
+- `/home/runner/work/player/player/player.js` full player behavior and interactive controls
+- `/home/runner/work/player/player/style.css` custom styling
 
-This template serves as the primary visual design for the MOVTIGROUP website. The focus is on delivering a modern, clean, and responsive user experience that reflects the brand identity through its visual components.
+## Features
 
-## Template Features
+- Play/pause and 10-second seek controls
+- Frame-by-frame navigation
+- Volume and mute control
+- Playback speed control
+- Video rotation
+- Fullscreen and Picture-in-Picture
+- Progress bar with drag/touch support
+- Playback status and center toast messages
+- Responsive layout for mobile and desktop
 
-- **Responsive Design:** Optimized for various devices including mobile, tablet, and desktop.
-- **Easy Customization:** Design elements can be easily adjusted to align with the company’s visual identity.
-- **User-Friendly Documentation:** A clean and well-documented structure for quick navigation and understanding.
-- **Maintainability:** Regular updates and an organized file structure ensure consistent design evolution.
+## Accepted input URL
 
-## Important Notes
+The `u` query parameter must start with one of these prefixes:
 
-- This repository is solely for presenting the visual design and layout components of the website.
-- Code related to operational functionality and traffic management is maintained privately in a separate repository.
-- Updates, improvements, and design revisions are published here.
+- `https://download.ththt.ir/file/`
+- `https://online.ththt.ir/file/`
 
-## Usage
+Example:
 
-Feel free to review the files in this repository to explore the visual design and layout of the website. For any suggestions or feedback to improve the template, please use the **Issues** section on GitHub or contact our team directly.
+`index.php?u=https://download.ththt.ir/file/example.mp4`
 
-## Contact
+## Keyboard shortcuts
 
-- **Email:** [info@movtigroup.ir](mailto:info@movtigroup.ir)
-- **Website:** [movtigroup.ir](https://movtigroup.ir)
-- **GitHub:** [https://github.com/movtigroup/movtigroup/](https://github.com/movtigroup/movtigroup/)
+- `Space`: play/pause
+- `←` / `→`: seek -10s / +10s
+- `↑` / `↓`: volume up/down
+- `M`: mute
+- `F`: fullscreen
+- `P`: Picture-in-Picture
+- `Q` / `E`: rotate left/right
+- `,` / `.`: previous/next frame
+- `0` to `9`: jump to timeline percentage
+
+## Run locally
+
+This project has no build step. Serve the repository through any PHP-capable web server and open `index.php`.
